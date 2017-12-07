@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.commit();
                 }
 
-                if (username.equals("user@aol.com") && password.equals("password1234")) {
+                if (username.getText().toString().equals("user@aol.com") && password.getText().toString().equals("password1234")) {
                     Intent intent = new Intent(LoginActivity.this, ListActivity.class);
                     intent.putExtra(EMAIL_KEY, username.getText().toString());
                     startActivity(intent);
