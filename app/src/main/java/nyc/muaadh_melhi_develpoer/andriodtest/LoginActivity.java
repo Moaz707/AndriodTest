@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String SHARED_PREFS_KEY = "sharedPrefsTesting";
-    private static final String EMAIL_KEY = "email";
+    public static final String EMAIL_KEY = "email";
     private EditText username;
     private EditText password;
     private CheckBox checkBox;
