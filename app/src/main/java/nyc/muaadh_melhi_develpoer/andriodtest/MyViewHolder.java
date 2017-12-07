@@ -33,7 +33,7 @@ class MyViewHolder extends RecyclerView.ViewHolder {
                 bundle.putString("input", textView.getText().toString());
                 displayNumberFragment.setArguments(bundle);
 
-                MyAdapter.fragment.getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,displayNumberFragment ).addToBackStack("").commit()
+                MyAdapter.fragment.getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,displayNumberFragment ).addToBackStack("").commit();
 
 
 
