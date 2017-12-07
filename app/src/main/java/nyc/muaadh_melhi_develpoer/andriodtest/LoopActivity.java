@@ -23,8 +23,8 @@ public class LoopActivity extends AppCompatActivity {
     }
 
 
-  private  class MyThread extends AsyncTask<Integer, Integer, Integer> {
-        private int counter = 0;
+    private class MyThread extends AsyncTask<Integer, Integer, Integer> {
+
 
         @Override
         protected void onPreExecute() {
@@ -33,26 +33,24 @@ public class LoopActivity extends AppCompatActivity {
 
         @Override
         protected Integer doInBackground(Integer... value) {
-
-            for (int i = value[0]; i <= 100000; i++) {
-
-                publishProgress(counter++);
-
+            int count = value[0];
+            for (int i = count;i <= 100000;i++){
+                count = i;
+                publishProgress(i);
             }
 
-
-            return counter;
+            return count;
         }
 
         @Override
         protected void onProgressUpdate(Integer... progress) {
-            textView.setText("Loops completed: "+progress[0]);
+            textView.setText("Loops completed: " + progress[0]);
         }
 
 
         @Override
         protected void onPostExecute(Integer result) {
-            textView.setText("Loops completed: "+result);
+            textView.setText("Loops completed: " + result);
             Intent intent = new Intent(LoopActivity.this, LoginActivity.class);
             startActivity(intent);
         }
